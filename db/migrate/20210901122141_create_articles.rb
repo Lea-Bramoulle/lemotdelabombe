@@ -5,6 +5,7 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :subject
       t.text :content
+      t.text :img_desc
 
       t.belongs_to :categorie, index: true #cette ligne rajoute la référence à la table users
 

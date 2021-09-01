@@ -13,13 +13,12 @@ class ArticleController < ApplicationController
   def new
 
 
-
   end
 
 
   def create
 
-    @article = Article.new(title: params[:title], subject: params[:subject], content:params[:content], categorie_id: 1)
+    @article = Article.new(title: params[:title], subject: params[:subject], content:params[:content], img_desc: params[:img_desc], categorie_id: 1)
 
           if @article.save
             redirect_to root_path

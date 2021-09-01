@@ -20,6 +20,7 @@
     <!--================End Home Banner Area =================-->
 
 
+
 <!--================Blog Area =================-->
 <section class="blog_area single-post-area area-padding">
     <div class="container">
@@ -27,8 +28,32 @@
             <div class="col-lg-8 posts-list">
                 <div class="single-post">
                     <div class="feature-img">
+
+
+                      <%if @article.avatar.attached?%>
+                        <%= image_tag @article.avatar, alt: 'avatar' %>
+                      <%else%>
                         <%=image_tag "home.jpg", style:"height:30em;width:100%;object-fit:cover;"%>
+                      <%end%>
+
+                      <p><%=@article.img_desc%></p>
+
                     </div>
+
+                    <% if current_user.nil?%>
+
+                    <%elsif current_user.is_admin == true %>
+                      <h3>Changer d'avatar ?</h3>
+                      <%= form_tag article_avatars_path(@article), multipart: true do %>
+                        <%= file_field_tag :avatar %>
+                        <%= submit_tag "mettre à jour" %>
+                      <% end %>
+
+
+                    <%else%>
+
+                    <%end%>
+
 
                     <div class="blog_details">
                         <h2><%=@article.title%></h2>

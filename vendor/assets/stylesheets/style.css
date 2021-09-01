@@ -1685,6 +1685,15 @@ body.mobile-nav-active #mobile-nav-toggle {
 .blog-pagination .page-item:last-child .page-link {
   margin-right: 0; }
 
+
+blockquote {
+    background: #fff;
+    padding: 15px 15px 15px 20px;
+    border-left: 2px solid #ff7a7f; }
+    @media (min-width: 768px) {
+      blockquote{
+        padding: 25px 25px 25px 30px; } }
+
 /*============ Start Blog Single Styles  =============*/
 .single-post-area .blog_details {
   box-shadow: none;
