@@ -1558,7 +1558,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .blog_right_sidebar .widget_title {
   font-size: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 1em;
   color: #2a2a2a; }
   .blog_right_sidebar .widget_title::after {
     content: "";
@@ -3606,10 +3606,20 @@ h6 {
     color: #fff;
     border-color: #ff7a7f;
     padding: 12px 25px; }
+    .button-contactForm2 {
+      border-color: #ff7a7f;
+      background: #fff;
+      color: #ff7a7f;
+    width:100%;}
     .button-contactForm:hover {
       border-color: #2a2a2a;
       background: #2a2a2a;
       color: #fff; }
+      .button-contactForm2:hover {
+        background: #ff7a7f;
+        color: #fff;
+        border-color: #ff7a7f;
+       }
 
 /* End Main Button Area css
 ============================================================================================ */

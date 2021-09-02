@@ -40,10 +40,6 @@
                                 <h4>Created face stars sixth forth fow
                                 Earth firmament meat</h4>
                             </a>
-                            <div class="meta-bottom d-flex" >
-                                <a href="#">March 12 , 2019 . </a>
-                                <a class="dark_font" href="#">By Alen Mark</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,13 +96,13 @@
     <section class="first_block">
       <div class="container">
           <div class="row">
-              <div class="area-heading">
+              <div class="area-heading py-4">
                   <h3>Derniers articles</h3>
                   <p>Abundantly creeping saw forth spirit can made appear fourth us.</p>
               </div>
 
           </div>
-          <div class="row">
+          <div class="row my-4">
 
             <% x = 0 %>
 
@@ -118,8 +114,11 @@
               <div class="col-lg-7">
                   <div class="single-blog video-style">
                       <div class="thumb">
-                          <%=image_tag "streetart1.jpg" %>
-                          <!--<div class="play_btn">
+                        <%if i.avatar.attached?%>
+                          <%= image_tag i.avatar, alt: 'avatar', style:"height:33em; width:100%; object-fit:cover;" %>
+                        <%else%>
+                          <%=image_tag "home.jpg", style:"height:33em; width:100%; object-fit:cover;"%>
+                        <%end%>                          <!--<div class="play_btn">
                               <a class="play-video" href="https://www.youtube.com/watch?v=MrRvX5I8PyY" data-animate="zoomIn"
                               data-duration="1.5s" data-delay="0.1s"><span class="ti-control-play"></span></a>
                           </div>-->
@@ -146,7 +145,11 @@
 
                   <div class="single-blog video-style small row m_b_30">
                       <div class="thumb3 col-12 col-sm-5">
-                          <%=image_tag "streetart2.jpg" %>
+                        <%if i.avatar.attached?%>
+                          <%= image_tag i.avatar, alt: 'avatar' %>
+                        <%else%>
+                          <%=image_tag "home.jpg"%>
+                        <%end%>
                       </div>
                       <div class="short_details col-12 col-sm-7">
                           <div class="meta-top d-flex">
@@ -156,7 +159,7 @@
                               <h4><%=i.title%></h4>
                           </a>
                           <div class="meta-bottom d-flex">
-                              <a ><i class="ti-time"></i><%=i.created_at.strftime("Le %m/%d/%Y") %></a>
+                              <p class="mr-4"><i class="ti-time"></i><%=i.created_at.strftime("Le %m/%d/%Y") %></p>
                               <a ><i class="far fa-comment"></i> <%=i.comments.count%></a>
                               <a ><i class="far fa-heart"></i> <%=i.likes.count%></a>
                           </div>

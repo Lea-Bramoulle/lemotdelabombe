@@ -6,12 +6,12 @@
           <div
             class="banner_content d-md-flex justify-content-between align-items-center"
           >
+          <div class="page_link">
+            <a href="<%=root_path%>">Accueil</a>
+            <a href="<%=categorie_path(1)%>"><%=@article.categorie.categorie_name%></a>
+          </div>
             <div class="mb-3 mb-md-0">
-              <h2>Blog Details</h2>
-            </div>
-            <div class="page_link">
-              <a href="<%=root_path%>">Accueil</a>
-              <a href="<%=categorie_path(1)%>"><%=@article.categorie.categorie_name%></a>
+              <h2></h2>
             </div>
           </div>
         </div>
@@ -28,6 +28,14 @@
             <div class="col-lg-8 posts-list">
                 <div class="single-post">
                     <div class="feature-img">
+
+                      <h2><%=@article.title%></h2>
+                      <ul class="blog-info-link mt-3 mb-4">
+                          <li><a href="<%=categorie_path(1)%>"> <%=@article.categorie.categorie_name%></a></li>
+                          <li><a href="#"><i class="far fa-comments"></i> <%=@article.comments.count%> Commentaire(s)</a></li>
+                      </ul>
+
+                      <p><%=@article.subject%></p>
 
 
                       <%if @article.avatar.attached?%>
@@ -56,11 +64,6 @@
 
 
                     <div class="blog_details">
-                        <h2><%=@article.title%></h2>
-                        <ul class="blog-info-link mt-3 mb-4">
-                            <li><a href="#"><i class="far fa-user"></i> <%=@article.categorie.categorie_name%></a></li>
-                            <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                        </ul>
 
                         <%= sanitize @article.content%>
 
@@ -112,8 +115,6 @@
 
 
 
-
-
                 <div class="comment-form">
                     <h4>Laisser un commentaire</h4>
 
@@ -138,6 +139,7 @@
                           <%= submit_tag " Ajouter ", class:"button button-contactForm", style:"border-radius:20px;" %>
                           <%end%>
                         </div>
+
 
                     </div>
                 </div>
@@ -203,10 +205,25 @@
                                     <h3><%=i.title%></h3>
                                 </a>
                                 <p><%=i.created_at.strftime("Le %m/%d/%Y")%></p>
-                            </div>
+                            </div
                         </div>
                         <%end%>
 
+                    </aside>
+
+
+                    <aside class="single_sidebar_widget newsletter_widget">
+                        <h4 class="widget_title">Vous avez aimé l'article ?</h4>
+                        <div >
+                          <%= form_tag url_for(article_like_index_path(params[:id])), :like => @like, method: 'post',class:"register-form" do %>
+                            <div class="row">
+                              <%= button_tag(type: 'submit', class: "button button-contactForm2") do %>
+                              J'<i class="far fa-heart"></i>
+                                <% end %>
+                              <%end%>
+
+                            </div>
+                        </div>
                     </aside>
 
 
@@ -220,6 +237,7 @@
                             <button class="button rounded-0 primary-bg text-white w-100" type="submit">Subscribe</button>
                         </form>
                     </aside>
+
                 </div>
             </div>
         </div>
