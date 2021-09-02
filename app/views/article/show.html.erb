@@ -68,7 +68,7 @@
                 </div>
                 <div class="navigation-top">
                     <div class="d-sm-flex justify-content-between text-center">
-                        <p class="like-info"><span class="align-middle"><i class="far fa-heart"></i></span><%=@comments.count%> </p>
+                        <p class="like-info"><span class="align-middle"><i class="far fa-heart"></i></span><%=@likes.count%> </p>
                         <div class="col-sm-4 text-center my-2 my-sm-0">
                             <p class="comment-count"><span class="align-middle"><i class="far fa-comment"></i></span> <%=@comments.count%> Commentaires</p>
                         </div>
@@ -78,16 +78,14 @@
 
 
                 <div class="comments-area">
-                    <h4><%=@comments.count%> Commentaires</h4>
+                    <h4><%=@comments.count%> Commentaire(s)</h4>
                     <div class="comment-list">
 
                       <% @comments.each do |i|%>
 
                         <div class="single-comment justify-content-between d-flex">
                             <div class="user justify-content-between d-flex">
-                                <div class="thumb">
-                                    <img src="img/blog/c1.png" alt="">
-                                </div>
+
                                 <div class="desc">
                                     <p class="comment">
                                         <%=i.comment_content%>
@@ -110,6 +108,11 @@
 
                     </div>
                 </div>
+
+
+
+
+
 
                 <div class="comment-form">
                     <h4>Laisser un commentaire</h4>
@@ -148,15 +151,15 @@
                       <% @visages.each do |i|%>
                       <div class="media post_item">
                         <%if i.avatar.attached?%>
-                          <%= image_tag i.avatar, alt: 'avatar', style:"width:7em;height:auto;object-fit:cover;" %>
+                          <%= image_tag i.avatar, alt: 'avatar', style:"width:7em;height:6em;object-fit:cover;" %>
                         <%else%>
-                          <%=image_tag "home.jpg", style:"width:7em;height:auto;object-fit:cover;"%>
+                          <%=image_tag "home.jpg", style:"width:7em;height:6em;object-fit:cover;"%>
                         <%end%>
                           <div class="media-body">
-                              <a href="single-blog.html">
+                              <a href="<%=article_path(i)%>">
                                   <h3><%=i.title%></h3>
                               </a>
-                              <p><%=i.created_at%></p>
+                              <p><%=i.created_at.strftime("Le %m/%d/%Y")%></p>
                           </div>
                       </div>
                       <%end%>
@@ -169,15 +172,15 @@
                         <% @engages.each do |i|%>
                         <div class="media post_item">
                           <%if i.avatar.attached?%>
-                            <%= image_tag i.avatar, alt: 'avatar' , style:"width:7em;height:auto;object-fit:cover;"%>
+                            <%= image_tag i.avatar, alt: 'avatar' , style:"width:7em;height:6em;object-fit:cover;"%>
                           <%else%>
-                            <%=image_tag "home.jpg", style:"width:7em;height:auto;object-fit:cover;"%>
+                            <%=image_tag "home.jpg", style:"width:7em;height:6em;object-fit:cover;"%>
                           <%end%>
                             <div class="media-body">
-                                <a href="single-blog.html">
+                                <a href="<%=article_path(i)%>">
                                     <h3><%=i.title%></h3>
                                 </a>
-                                <p><%=i.created_at%></p>
+                                <p><%=i.created_at.strftime("Le %m/%d/%Y")%></p>
                             </div>
                         </div>
                         <%end%>
@@ -191,15 +194,15 @@
                         <% @experts.each do |i|%>
                         <div class="media post_item">
                           <%if i.avatar.attached?%>
-                            <%= image_tag i.avatar, alt: 'avatar', style:"width:7em;height:auto;object-fit:cover;" %>
+                            <%= image_tag i.avatar, alt: 'avatar', style:"width:7em;height:6em;object-fit:cover;" %>
                           <%else%>
-                            <%=image_tag "home.jpg", style:"width:7em;height:auto;object-fit:cover;"%>
+                            <%=image_tag "home.jpg", style:"width:7em;height:6em;object-fit:cover;"%>
                           <%end%>
                             <div class="media-body">
-                                <a href="single-blog.html">
+                                <a href="<%=article_path(i)%>">
                                     <h3><%=i.title%></h3>
                                 </a>
-                                <p><%=i.created_at%></p>
+                                <p><%=i.created_at.strftime("Le %m/%d/%Y")%></p>
                             </div>
                         </div>
                         <%end%>

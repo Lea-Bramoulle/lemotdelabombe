@@ -60,7 +60,7 @@
                                 <div class="short_details">
 
                                     <div class="meta-top d-flex justify-content-center">
-                                        <a href="#">Little Berlin(s)</a>
+                                        <a href="#">Les Engagés</a>
                                     </div>
                                     <a class="d-block" href="single-blog.html">
                                         <h4>The abundantly brout after day fish there image</h4>
@@ -77,7 +77,7 @@
                                 <div class="short_details">
 
                                     <div class="meta-top d-flex justify-content-center">
-                                        <a href="#">Les Engagés</a>
+                                        <a href="#">Les Experts</a>
                                     </div>
                                     <a class="d-block" href="single-blog.html">
                                         <h4>The abundantly brought after day fish there image</h4>
@@ -107,6 +107,12 @@
 
           </div>
           <div class="row">
+
+            <% x = 0 %>
+
+            <% @articles_last.each do |i| %>
+
+            <%if x<1%>
               <div class="col-lg-7">
                   <div class="single-blog video-style">
                       <div class="thumb">
@@ -118,86 +124,100 @@
                       </div>
                       <div class="short_details">
                           <div class="meta-top d-flex">
-                              <a href="#">Visage</a>/
-                              <a href="#">March 15, 2019</a>
+                              <a href="<%=categorie_path(i.categorie.id)%>"><%=i.categorie.categorie_name%></a>/
+                              <p><%=i.created_at.strftime("Le %m/%d/%Y")  %></p>
                           </div>
-                          <a class="d-block" href="single-blog.html">
-                              <h4>Created face stars sixth forth fow
-                              Earth firmament meat</h4>
+                          <a class="d-block" href="<%=article_path(i)%>">
+                              <h4><%=i.title%></h4>
                           </a>
                           <div class="meta-bottom d-flex">
-                              <a href="#"><i class="ti-comment"></i>05 comment</a>
-                              <a href="#"><i class="ti-heart"></i> 0 like</a>
-                              <a href="#"><i class="ti-eye"></i> 1k view</a>
+                              <a ><i class="far fa-comment"></i><%=i.comments.count%></a>
+                              <a ><i class="far fa-heart"></i><%=i.likes.count%></a>
                           </div>
                       </div>
                   </div>
-
               </div>
 
               <div class="col-lg-5">
+
+                              <%else%>
+
                   <div class="single-blog video-style small row m_b_30">
                       <div class="thumb3 col-12 col-sm-5">
                           <%=image_tag "streetart2.jpg" %>
                       </div>
                       <div class="short_details col-12 col-sm-7">
                           <div class="meta-top d-flex">
-                              <a href="#">Little Berlin(s)</a>
+                              <a href="<%=article_path(i)%>"><%=i.categorie.categorie_name%></a>
                           </div>
-                          <a class="d-block" href="single-blog.html">
-                              <h4>Blessed night morning on
-                              them you great</h4>
+                          <a class="d-block" href="<%=article_path(i)%>">
+                              <h4><%=i.title%></h4>
                           </a>
                           <div class="meta-bottom d-flex">
-                              <a href="#"><i class="ti-time"></i>mar 12</a>
-                              <a href="#"><i class="ti-heart"></i> 0 like</a>
-                              <a href="#"><i class="ti-eye"></i> 1k view</a>
+                              <a ><i class="ti-time"></i><%=i.created_at.strftime("Le %m/%d/%Y") %></a>
+                              <a ><i class="far fa-comment"></i> <%=i.comments.count%></a>
+                              <a ><i class="far fa-heart"></i> <%=i.likes.count%></a>
                           </div>
                       </div>
                   </div>
 
-                  <div class="single-blog video-style small row m_b_30 ">
-                      <div class="thumb3 col-12 col-sm-5">
-                          <%=image_tag "streetart3.jpg" %>
-                      </div>
-                      <div class="short_details col-12 col-sm-7">
-                          <div class="meta-top d-flex">
-                              <a href="#">Les Engagés</a>
-                          </div>
-                          <a class="d-block" href="single-blog.html">
-                              <h4>Blessed night morning on
-                              them you great</h4>
-                          </a>
-                          <div class="meta-bottom d-flex">
-                              <a href="#"><i class="ti-time"></i>mar 12</a>
-                              <a href="#"><i class="ti-heart"></i> 0 like</a>
-                              <a href="#"><i class="ti-eye"></i> 1k view</a>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="single-blog video-style small row">
-                      <div class="thumb3 col-12 col-sm-5">
-                          <%=image_tag "streetart4.jpg" %>
-                      </div>
-                      <div class="short_details col-12 col-sm-7">
-                          <div class="meta-top d-flex">
-                              <a href="#">Visage</a>
-                          </div>
-                          <a class="d-block" href="single-blog.html">
-                              <h4>Blessed night morning on
-                              them you great</h4>
-                          </a>
-                          <div class="meta-bottom d-flex">
-                              <a href="#"><i class="ti-time"></i>mar 12</a>
-                              <a href="#"><i class="ti-heart"></i> 0 like</a>
-                              <a href="#"><i class="ti-eye"></i> 1k view</a>
-                          </div>
-                      </div>
-                  </div>
+                  <%end%>
+                  <%x=x+1%>
+                  <%end%>
 
               </div>
+
           </div>
       </div>
     </section>
     <!--================ First block section end =================-->
+
+    <div id="a-propos" class="jumbotron-home" style="background-image:url('<%=asset_path "191.jpg"%>');">
+
+        <div class="row" style="justify-content:center;">
+
+        <h2 class="col-12 text-center">L’art urbain, enfant de la rue qui gravit les échelons</h2>
+
+        <p class="col-8 mt-4 text-center">Ils sont invisibles et parcourent les rues, une bombe de peinture dans une main, une cagoule dans l’autre. Ce sont les « vandales ». Quand un graffiti apparaît sur un mur, au petit matin il est recouvert. Et sans jamais s’essouffler les « graffeurs » recolorent de plus belle les murs des villes.  </p>
+
+        </div>
+    </div>
+
+
+    <div class="container" style="margin-top:8em; margin-bottom:4em;">
+
+      <div class="area-heading pt-4 mt-4">
+          <h3>A propos</h3>
+      </div>
+
+      <div class="row" style="justify-content:center;">
+
+      <p class="p-home my-4 py-4 px-4 col-md-11" > Incompris, ceux qui maîtrisent la bombe l’associent à un moyen d’expression, un engagement porté par la passion. Si certains s’impatientent, dans l’attente que leurs coups de pinceaux soient appréciés à leur juste valeur, d’autres préfèrent le prendre comme un challenge. Souvent discrets, ces « indésirables » opèrent sous cape mais orientent leurs œuvres au coin de la rue le plus visible par les passants. <p>
+
+        <blockquote class="blockquote-home my-4 py-4 px-4 col-md-8">
+          « Tu vois où j’ai fait mon graff’ ? Dans cet angle-là, personne peut le rater. »
+        </blockquote>
+
+      <p class="p-home py-4 px-4 col-md-11">L'artiste Kersmo n’a pas laissé un seul mur de Montpellier vierge de son « posca ». Ils se cachent derrière leur art, dans une modestie certaine.</p>
+
+
+      <div class="row my-4">
+          <div class="col-12">
+                  <%=image_tag "graffiti.jpg", style:"height:14em;width:80em;object-fit:cover;"%>
+          </div>
+      </div>
+
+
+      <p class="p-home py-4 my-4 px-4 col-md-11"> Aujourd’hui, le vandalisme s’oppose aux street-artistes, entrés dans les galeries. Le « tag », qui consistait seulement à « signer » par son blaze, s’est ouvert a bien d’autres formes. Le terme «street-art» s’est éloigné de ses racines. Un autre regard lui est désormais attaché, et porte un nouveau nom : <strong>l’art urbain ou urban art</strong>. <p>
+
+
+      <p class="p-home  my-4 px-4 col-md-11">Dans l’ombre ou au grand jour, à présent c’est une question de choix. On distingue le lettrage de la fresque et du collage. Des quartiers entiers se transforment en musées à ciel ouvert.
+      Utilisé pour l’embellissement des villes face a l’urbanisation grandissante et parfois face à l’abandon de certains quartiers par les pouvoirs publics, cet art est entré
+      dans les dossiers légaux. <p>
+
+      <p class="p-home py-4 my-4 px-4 col-md-11 text-center">Si le berceau du street-art s’inscrit dans la marginalité et la
+      pensée anti-système, l’accord des mairies et la volonté de faire entrer cette forme d’art dans les musées, muselle finalement un animal sauvage jusqu’alors incontrôlable.</p>
+
+      </div>
+
+    </div>

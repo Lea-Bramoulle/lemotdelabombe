@@ -17,7 +17,8 @@ resources :like
 
 resources :article do
     resources :avatars, only: [:create]
-    resources :comment 
+    resources :comment
+    resources :like
   end
 
 end

@@ -14,10 +14,6 @@
  *= require_self
  *= require trix
  *= require bootstrap
- *= require themify-icons
- *= require all.min
- *= require animate
- *= require magnific-popup
  *= require style
  *= require responsive
 */

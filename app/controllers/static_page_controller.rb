@@ -2,6 +2,8 @@ class StaticPageController < ApplicationController
 
   def index
 
+    @articles_last = Article.all.limit(4).order('created_at DESC')
+
   end
 
   def blog
@@ -11,6 +13,6 @@ class StaticPageController < ApplicationController
 
   def article
 
-  end 
+  end
 
 end

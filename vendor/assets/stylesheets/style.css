@@ -44,6 +44,32 @@ Table of Content:
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Open+Sans:400,600,700");
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
+
+.p-home {
+  font-size:17px;
+  text-indent: inherit;
+}
+
+.jumbotron-home {
+  height:30em;
+  background-size: cover ;
+  background-repeat: no-repeat ;
+  background-position: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.jumbotron-home h2 {
+  font-size:38px;
+  color:black;
+}
+
+.jumbotron-home p {
+  font-size:20px;
+  color:black;
+}
+
 .list {
   list-style: none;
   margin: 0px;
@@ -1692,6 +1718,15 @@ blockquote {
     border-left: 2px solid #ff7a7f; }
     @media (min-width: 768px) {
       blockquote{
+        padding: 25px 25px 25px 30px; } }
+
+.blockquote-home {
+  font-size:22px;
+    background: #fff;
+    padding: 15px 15px 15px 20px;
+    border-left: 2px solid #ff7a7f; }
+    @media (min-width: 768px) {
+      .blockquote-home{
         padding: 25px 25px 25px 30px; } }
 
 /*============ Start Blog Single Styles  =============*/
@@ -3582,6 +3617,7 @@ h6 {
 /*----------------------------------------------------*/
 /*============== footer-area css ===============*/
 .footer-area {
+  background-color: #FBFBFB;
   padding-top: 115px; }
   @media (max-width: 991px) {
     .footer-area {
