@@ -7,6 +7,16 @@ class ArticleController < ApplicationController
 
     @article = Article.all.order('created_at DESC')
 
+
+      @articles = Article.all
+
+      @visages = Categorie.find(1).articles.all.limit(4).order('created_at DESC')
+
+      @engages = Categorie.find(2).articles.all.limit(4).order('created_at DESC')
+
+      @experts = Categorie.find(3).articles.all.limit(4).order('created_at DESC')
+
+
   end
 
 

@@ -39,7 +39,7 @@
 
 
                       <%if @article.avatar.attached?%>
-                        <%= image_tag @article.avatar, alt: 'avatar' %>
+                        <%= image_tag @article.avatar, alt: 'avatar', style:"height:35em;width:100%;object-fit:cover;" %>
                       <%else%>
                         <%=image_tag "home.jpg", style:"height:30em;width:100%;object-fit:cover;"%>
                       <%end%>

@@ -17,4 +17,7 @@ class CategorieController < ApplicationController
   end
 
 
+
+
+
 end
