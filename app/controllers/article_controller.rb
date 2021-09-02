@@ -37,6 +37,14 @@ class ArticleController < ApplicationController
 
     @article = Article.find(params[:id])
 
+    @comments = Article.find(params[:id]).comments.all
+
+    @visages = Categorie.find(1).articles.all.limit(4).order('created_at DESC')
+
+    @engages = Categorie.find(2).articles.all.limit(4).order('created_at DESC')
+
+    @experts = Categorie.find(3).articles.all.limit(4).order('created_at DESC')
+
 
   end
 

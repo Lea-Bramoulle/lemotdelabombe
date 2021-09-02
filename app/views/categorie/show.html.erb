@@ -32,7 +32,13 @@
 
                       <article class="blog_item">
                         <div class="blog_item_img">
-                            <a href="<%=article_path(i)%>"><%=image_tag "home.jpg", style:"height:20em;width:100%;object-fit:cover;"%></a>
+                            <a href="<%=article_path(i)%>">
+                              <%if i.avatar.attached?%>
+                                <%= image_tag i.avatar, alt: 'avatar', style:"width:100%;height:26em;object-fit:cover;" %>
+                              <%else%>
+                                <%=image_tag "home.jpg", style:"width:7em;height:auto;object-fit:cover;"%>
+                              <%end%>
+                            </a>
                           <a href="#" class="blog_item_date">
                             <p><%=@categorie.categorie_name%></p>
                           </a>
@@ -77,129 +83,73 @@
                           </ul>
                       </nav>
                   </div>
+                  
               </div>
               <div class="col-lg-4">
                   <div class="blog_right_sidebar">
 
                     <aside class="single_sidebar_widget popular_post_widget">
                         <h3 class="widget_title">Visages</h3>
+
+                        <% @visages.each do |i|%>
                         <div class="media post_item">
-                            <img src="img/blog/popular-post/post1.jpg" alt="post">
+                          <%if i.avatar.attached?%>
+                            <%= image_tag i.avatar, alt: 'avatar', style:"width:7em;height:auto;object-fit:cover;" %>
+                          <%else%>
+                            <%=image_tag "home.jpg", style:"width:7em;height:auto;object-fit:cover;"%>
+                          <%end%>
                             <div class="media-body">
                                 <a href="single-blog.html">
-                                    <h3>From life was you fish...</h3>
+                                    <h3><%=i.title%></h3>
                                 </a>
-                                <p>January 12, 2019</p>
+                                <p><%=i.created_at%></p>
                             </div>
                         </div>
-                        <div class="media post_item">
-                            <img src="img/blog/popular-post/post2.jpg" alt="post">
-                            <div class="media-body">
-                                <a href="single-blog.html">
-                                    <h3>The Amazing Hubble</h3>
-                                </a>
-                                <p>02 Hours ago</p>
-                            </div>
-                        </div>
-                        <div class="media post_item">
-                            <img src="img/blog/popular-post/post3.jpg" alt="post">
-                            <div class="media-body">
-                                <a href="single-blog.html">
-                                    <h3>Astronomy Or Astrology</h3>
-                                </a>
-                                <p>03 Hours ago</p>
-                            </div>
-                        </div>
-                        <div class="media post_item">
-                            <img src="img/blog/popular-post/post4.jpg" alt="post">
-                            <div class="media-body">
-                                <a href="single-blog.html">
-                                    <h3>Asteroids telescope</h3>
-                                </a>
-                                <p>01 Hours ago</p>
-                            </div>
-                        </div>
+                        <%end%>
+
                     </aside>
 
                       <aside class="single_sidebar_widget popular_post_widget">
                           <h3 class="widget_title">Les Engagés</h3>
+
+                          <% @engages.each do |i|%>
                           <div class="media post_item">
-                              <img src="img/blog/popular-post/post1.jpg" alt="post">
+                            <%if i.avatar.attached?%>
+                              <%= image_tag i.avatar, alt: 'avatar' , style:"width:7em;height:auto;object-fit:cover;"%>
+                            <%else%>
+                              <%=image_tag "home.jpg", style:"width:7em;height:auto;object-fit:cover;"%>
+                            <%end%>
                               <div class="media-body">
                                   <a href="single-blog.html">
-                                      <h3>From life was you fish...</h3>
+                                      <h3><%=i.title%></h3>
                                   </a>
-                                  <p>January 12, 2019</p>
+                                  <p><%=i.created_at%></p>
                               </div>
                           </div>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post2.jpg" alt="post">
-                              <div class="media-body">
-                                  <a href="single-blog.html">
-                                      <h3>The Amazing Hubble</h3>
-                                  </a>
-                                  <p>02 Hours ago</p>
-                              </div>
-                          </div>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post3.jpg" alt="post">
-                              <div class="media-body">
-                                  <a href="single-blog.html">
-                                      <h3>Astronomy Or Astrology</h3>
-                                  </a>
-                                  <p>03 Hours ago</p>
-                              </div>
-                          </div>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post4.jpg" alt="post">
-                              <div class="media-body">
-                                  <a href="single-blog.html">
-                                      <h3>Asteroids telescope</h3>
-                                  </a>
-                                  <p>01 Hours ago</p>
-                              </div>
-                          </div>
+                          <%end%>
+
                       </aside>
 
 
                       <aside class="single_sidebar_widget popular_post_widget">
-                          <h3 class="widget_title">Little Berlin(s)</h3>
+                          <h3 class="widget_title">Les Experts</h3>
+
+                          <% @experts.each do |i|%>
                           <div class="media post_item">
-                              <img src="img/blog/popular-post/post1.jpg" alt="post">
+                            <%if i.avatar.attached?%>
+                              <%= image_tag i.avatar, alt: 'avatar', style:"width:7em;height:auto;object-fit:cover;" %>
+                            <%else%>
+                              <%=image_tag "home.jpg", style:"width:7em;height:auto;object-fit:cover;"%>
+                            <%end%>
                               <div class="media-body">
                                   <a href="single-blog.html">
-                                      <h3>From life was you fish...</h3>
+                                      <h3><%=i.title%></h3>
                                   </a>
-                                  <p>January 12, 2019</p>
+                                  <p><%=i.created_at%></p>
                               </div>
                           </div>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post2.jpg" alt="post">
-                              <div class="media-body">
-                                  <a href="single-blog.html">
-                                      <h3>The Amazing Hubble</h3>
-                                  </a>
-                                  <p>02 Hours ago</p>
-                              </div>
-                          </div>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post3.jpg" alt="post">
-                              <div class="media-body">
-                                  <a href="single-blog.html">
-                                      <h3>Astronomy Or Astrology</h3>
-                                  </a>
-                                  <p>03 Hours ago</p>
-                              </div>
-                          </div>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post4.jpg" alt="post">
-                              <div class="media-body">
-                                  <a href="single-blog.html">
-                                      <h3>Asteroids telescope</h3>
-                                  </a>
-                                  <p>01 Hours ago</p>
-                              </div>
-                          </div>
+                          <%end%>
+
                       </aside>
 
                       <aside class="single_sidebar_widget newsletter_widget">

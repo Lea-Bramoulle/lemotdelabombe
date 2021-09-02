@@ -7,6 +7,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+        <script src="https://kit.fontawesome.com/2f609438b2.js" crossorigin="anonymous"></script>
+
+
   </head>
 
 
@@ -17,11 +21,9 @@
           <div class="col-6 col-lg-4">
               <div class="float-left">
                   <ul class="header_social">
-                      <li><a href="#"><i class="ti-facebook"></i></a></li>
-                      <li><a href="#"><i class="ti-twitter"></i></a></li>
-                      <li><a href="#"><i class="ti-instagram"></i></a></li>
-                      <li><a href="#"><i class="ti-skype"></i></a></li>
-                      <li><a href="#"><i class="ti-vimeo"></i></a></li>
+                      <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                   </ul>
               </div>
           </div>
@@ -59,9 +61,10 @@
                           <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
                               <li class="nav-item active"><a class="nav-link" href="index.html">Accueil</a></li>
                               <li class="nav-item"><a class="nav-link" href="category.html">A Propos</a></li>
-                              <li class="nav-item"><a class="nav-link" href="archive.html">Visages</a></li>
-                              <li class="nav-item"><a class="nav-link" href="archive.html">Les Engagés</a></li>
-                              <li class="nav-item"><a class="nav-link" href="archive.html">Little Berlin(s)</a></li>
+                              <li class="nav-item"><a class="nav-link" href="<%=categorie_path(1)%>">Visages</a></li>
+                              <li class="nav-item"><a class="nav-link" href="<%=categorie_path(2)%>">Les Engagés</a></li>
+                              <li class="nav-item"><a class="nav-link" href="<%=categorie_path(3)%>">Les Experts</a></li>
+                              <li class="nav-item"><a class="nav-link" href="<%=categorie_path(3)%>">Little Berlin(s)</a></li>
                               <!--<li class="nav-item submenu dropdown">
                                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les Enag</a>
                                   <ul class="dropdown-menu">
@@ -87,7 +90,7 @@
         <!-- ================ start footer Area ================= -->
         <footer class="footer-area">
             <div class="container">
-                <div class="row">
+                <div class="row mb-4 pb-4">
 
                     <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                         <h4>Alice Gleizes</h4>
@@ -100,8 +103,11 @@
                     <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                         <h4>Contact Info</h4>
                         <div class="footer-address">
-                            <p>Address :Your address goes
-                            here, your demo address.</p>
+                          <ul class="" style="display:flex; ">
+                              <li><a href="#"><i class="fab fa-linkedin-in pr-2"></i></a></li>
+                              <li><a href="#"><i class="fab fa-twitter px-2"></i></a></li>
+                              <li><a href="#"><i class="fab fa-instagram pl-2"></i></a></li>
+                          </ul>
                             <span>Phone : +8880 44338899</span>
                             <span>Email : info@colorlib.com</span>
                         </div>
@@ -110,10 +116,10 @@
                     <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                         <h4>Articles</h4>
                         <ul>
-                            <li><a href="#">Les visages</a></li>
-                            <li><a href="#">Les Engagés</a></li>
-                            <li><a href="#">Little Berlin(s)</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
+                            <li><a href="<%=categorie_path(1)%>">Les visages</a></li>
+                            <li><a href="<%=categorie_path(2)%>">Les Engagés</a></li>
+                            <li><a href="<%=categorie_path(3)%>">Les Experts</a></li>
+                            <li><a href="<%=categorie_path(1)%>">Little Berlin(s)</a></li>
                         </ul>
                     </div>
 

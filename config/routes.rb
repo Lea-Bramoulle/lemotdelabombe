@@ -12,8 +12,12 @@ root 'static_page#index'
 resources :article  #, only: [:index, :show, :edit, :new]
 resources :categorie #, only: [:show]
 
+resources :comment
+resources :like
+
 resources :article do
     resources :avatars, only: [:create]
+    resources :comment 
   end
 
 end
