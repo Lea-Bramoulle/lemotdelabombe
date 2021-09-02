@@ -112,7 +112,9 @@
 
             <% @articles_last.each do |i| %>
 
-            <%if x<1%>
+            <%if @articles_last.empty?%>
+
+            <%elsif x<1%>
               <div class="col-lg-7">
                   <div class="single-blog video-style">
                       <div class="thumb">
