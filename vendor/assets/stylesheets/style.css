@@ -327,7 +327,6 @@ ul {
     margin-right: 45px; }
     .header_area .navbar .nav .nav-item .nav-link {
       font: 500 12px/80px "Josefin Sans", sans-serif;
-      text-transform: capitalize;
       color: #33353b;
       padding: 0px;
       display: inline-block;
@@ -763,7 +762,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   .hero-banner h2 {
     font-size: 22px;
     color: #2a2a2a;
-    text-transform: capitalize;
     margin-bottom: 0; }
     @media (min-width: 768px) {
       .hero-banner h2 {
@@ -802,7 +800,6 @@ body.mobile-nav-active #mobile-nav-toggle {
     .banner-breadcrumb .breadcrumb-item {
       padding: .1rem; }
       .banner-breadcrumb .breadcrumb-item a {
-        text-transform: capitalize;
         color: #2a2a2a; }
       .banner-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
         color: #2a2a2a;
@@ -862,8 +859,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     transition: all 300ms linear 0s; }
     .single-blog .short_details a {
       color: #33353b;
-      font-weight: 600;
-      text-transform: capitalize; }
+      font-weight: 600;}
       .single-blog .short_details a:hover {
         color: #ff7a7f; }
   .single-blog .meta-bottom {
@@ -930,7 +926,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   .single-blog.style_two .meta-bottom a {
     color: #fff;
     font-size: 13px;
-    text-transform: uppercase;
     transition: all 300ms linear 0s; }
   .single-blog.style_two .meta-top a {
     font-size: 11px;
@@ -972,8 +967,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     transition: all 300ms linear 0s; }
     .single-blog.style-three .short_details a {
       color: #33353b;
-      font-weight: 600;
-      text-transform: capitalize; }
+      font-weight: 600;}
       .single-blog.style-three .short_details a:hover {
         color: #ff7a7f; }
   .single-blog.style-three .meta-bottom a {
@@ -2196,7 +2190,6 @@ blockquote {
   text-align: center;
   border: 1px solid #ff7a7f;
   cursor: pointer;
-  text-transform: capitalize;
   margin-top: 15px;
   transition: all 300ms linear 0s; }
   .category-page .main_btn:hover {
@@ -3424,7 +3417,6 @@ h6 {
   text-align: center;
   border: 1px solid #ff7a7f;
   cursor: pointer;
-  text-transform: capitalize;
   transition: all 300ms linear 0s; }
   .main_btn:hover {
     background: #fff;
@@ -3446,7 +3438,6 @@ h6 {
   text-align: center;
   border: 1px solid #ff7a7f;
   cursor: pointer;
-  text-transform: capitalize;
   transition: all 300ms linear 0s; }
   .main_btn_light:hover {
     background: #ff7a7f;
@@ -3699,7 +3690,6 @@ h6 {
     color: #fff;
     position: relative;
     left: 0;
-    text-transform: capitalize;
     z-index: 999; }
     .footer-area .single-footer-widget .click-btn i, .footer-area .single-footer-widget .click-btn span {
       font-size: 18px; }

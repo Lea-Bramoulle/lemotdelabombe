@@ -21,6 +21,7 @@
 
 
 
+
 <!--================Blog Area =================-->
 <section class="blog_area single-post-area area-padding">
     <div class="container">
@@ -34,6 +35,21 @@
                           <li><a href="<%=categorie_path(1)%>"> <%=@article.categorie.categorie_name%></a></li>
                           <li><a href="#"><i class="far fa-comments"></i> <%=@article.comments.count%> Commentaire(s)</a></li>
                       </ul>
+
+
+                      <% if current_user.nil? %>
+
+                      <%elsif current_user.is_admin == true%>
+
+                        <div style="display:flex;">
+                            <a class="mr-4" href="<%=edit_article_path(@article.id)%>">Editer l'article</a><br>
+                            <a href="<%= article_path(@article)%>" class="btn-outline red" data-confirm="Êtes vous sûr de vouloir supprimer cet article ?" data-method="DELETE" >Supprimer l'article</a>
+                        </div>
+
+                    <%else%>
+
+                    <%end%>
+
 
                       <p><%=@article.subject%></p>
 
@@ -224,18 +240,6 @@
 
                             </div>
                         </div>
-                    </aside>
-
-
-                    <aside class="single_sidebar_widget newsletter_widget">
-                        <h4 class="widget_title">Newsletter</h4>
-
-                        <form action="#">
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Enter email" required>
-                            </div>
-                            <button class="button rounded-0 primary-bg text-white w-100" type="submit">Subscribe</button>
-                        </form>
                     </aside>
 
                 </div>

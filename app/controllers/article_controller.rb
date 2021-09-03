@@ -1,6 +1,6 @@
 class ArticleController < ApplicationController
 
-
+  before_action :is_admin?, only: :new  
 
 
   def index
@@ -82,7 +82,7 @@ class ArticleController < ApplicationController
 
 
 
-      if @articleup.update(title: params[:title], subject: params[:subject], content:params[:content],categorie_id: params[:categorie_id])
+      if @articleup.update(title: params[:title], subject: params[:subject], content:params[:content], img_desc: params[:img_desc])
         redirect_to article_path
       else
         render :edit

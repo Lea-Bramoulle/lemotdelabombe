@@ -4,6 +4,7 @@ class CategorieController < ApplicationController
   def show
 
     @articles = Categorie.find(params[:id]).articles.all
+    
     @categorie = Categorie.find(params[:id])
 
     @visages = Categorie.find(1).articles.all.limit(4).order('created_at DESC')

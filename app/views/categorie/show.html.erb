@@ -44,9 +44,9 @@
                         </div>
 
                         <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
+                            <div class="d-inline-block">
                                 <h2><a href="<%=article_path(i)%>"><%=i.title%></a></h2>
-                            </a>
+                            </div>
                             <p><%=i.subject%></p>
                             <ul class="blog-info-link">
                               <li></li>
@@ -76,7 +76,7 @@
                             <%=image_tag "home.jpg", style:"width:7em;height:6em;object-fit:cover;"%>
                           <%end%>
                             <div class="media-body">
-                                <a href="single-blog.html">
+                                <a href="<%=article_path(i)%>">
                                     <h3><%=i.title%></h3>
                                 </a>
                                 <p><%=i.created_at.strftime("Le %m/%d/%Y")%></p>
@@ -97,7 +97,7 @@
                               <%=image_tag "home.jpg", style:"width:7em;height:6em;object-fit:cover;"%>
                             <%end%>
                               <div class="media-body">
-                                  <a href="single-blog.html">
+                                  <a href="<%=article_path(i)%>">
                                       <h3><%=i.title%></h3>
                                   </a>
                                   <p><%=i.created_at.strftime("Le %m/%d/%Y")%></p>
@@ -119,7 +119,7 @@
                               <%=image_tag "home.jpg", style:"width:7em;height:6em;object-fit:cover;"%>
                             <%end%>
                               <div class="media-body">
-                                  <a href="single-blog.html">
+                                  <a href="<%=article_path(i)%>">
                                       <h3><%=i.title%></h3>
                                   </a>
                                   <p><%=i.created_at.strftime("Le %m/%d/%Y")%></p>
