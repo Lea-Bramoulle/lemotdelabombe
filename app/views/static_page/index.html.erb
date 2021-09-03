@@ -9,20 +9,16 @@
               <div class="col-md-6 col-lg-6 col-xl-4">
                   <div class="single-blog style_two">
                       <div class="thumb1">
-                          <%=image_tag "home.jpg"%>
+                          <%=image_tag "littleberlin.jpg"%>
                       </div>
-                      <div class="short_details text-center ">
+                      <div class="short_details" style="align-items:flex-end; ">
 
-                          <div class="meta-top d-flex justify-content-center">
-                              <a href="#">Alice Gleizes</a>
+                          <div class="meta-top d-flex " style="margin-top:26em;">
+                              <a href="<%=little_berlins_path%>">Little Berlin(s)</a>
                           </div>
-                          <a class="d-block" href="single-blog.html">
-                              <h4>Le Mot de la Bombe</h4>
+                          <a class="d-block" href="<%=little_berlins_path%>">
+                              <h4>Des quartiers se transforment en musées à ciel ouvert</h4>
                           </a>
-                          <!--<div class="meta-bottom d-flex justify-content-center">
-                              <a href="#">March 12 , 2019 . </a>
-                              <a href="#">By Alen Mark</a>
-                          </div>-->
                       </div>
                   </div>
               </div>
@@ -34,11 +30,10 @@
                         </div>
                         <div class="short_details">
                             <div class="meta-top d-flex">
-                                <a href="#">Visages</a>
+                                <a href="<%=categorie_path(1)%>">Visages</a>
                             </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Created face stars sixth forth fow
-                                Earth firmament meat</h4>
+                            <a class="d-block" href="<%=categorie_path(1)%>">
+                                <h4>ls changent les murs en oeuvres d'art,<br> mais qui sont-ils?</h4>
                             </a>
                         </div>
                     </div>
@@ -56,10 +51,10 @@
                                 <div class="short_details">
 
                                     <div class="meta-top d-flex justify-content-center">
-                                        <a href="#">Les Engagés</a>
+                                        <a href="<%=categorie_path(3)%>">Les Engagés</a>
                                     </div>
-                                    <a class="d-block" href="single-blog.html">
-                                        <h4>The abundantly brout after day fish there image</h4>
+                                    <a class="d-block" href="<%=categorie_path(3)%>">
+                                        <h4>Ils utilisent la bombe pour se faire entendre</h4>
                                     </a>
                                 </div>
                             </div>
@@ -73,10 +68,10 @@
                                 <div class="short_details">
 
                                     <div class="meta-top d-flex justify-content-center">
-                                        <a href="#">Les Experts</a>
+                                        <a href="<%=categorie_path(2)%>">Les Experts</a>
                                     </div>
-                                    <a class="d-block" href="single-blog.html">
-                                        <h4>The abundantly brought after day fish there image</h4>
+                                    <a class="d-block" href="<%=categorie_path(2)%>">
+                                        <h4>Ils étudient ceux qui tiennent la bombe</h4>
                                     </a>
                                 </div>
                             </div>

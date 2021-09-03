@@ -5,10 +5,10 @@ class ArticleController < ApplicationController
 
   def index
 
-    @article = Article.all.order('created_at DESC')
+    #@article = Article.all.order('created_at DESC')
 
 
-      @articles = Article.all
+      @articles = Article.all.order('created_at DESC')
 
       @visages = Categorie.find(1).articles.all.limit(4).order('created_at DESC')
 

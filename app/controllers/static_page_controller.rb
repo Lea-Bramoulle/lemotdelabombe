@@ -15,4 +15,9 @@ class StaticPageController < ApplicationController
 
   end
 
+  def littleberlin
+
+  end
+
+
 end

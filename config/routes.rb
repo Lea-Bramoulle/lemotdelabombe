@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 root 'static_page#index'
 
-  get '/blog', to: 'static_page#blog'
+  get '/little-berlins', to: 'static_page#littleberlin'
 
   #get '/article', to: 'static_page#article'
 
