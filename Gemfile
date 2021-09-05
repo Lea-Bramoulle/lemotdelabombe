@@ -9,6 +9,8 @@ gem 'rails_admin', '~> 2.0'
 
 gem 'trix'
 
+gem "aws-sdk-s3", require: false
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
