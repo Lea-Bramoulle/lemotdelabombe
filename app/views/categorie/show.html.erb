@@ -50,7 +50,7 @@
                             <p><%=i.subject%></p>
                             <ul class="blog-info-link">
                               <li></li>
-                              <li> <%=i.created_at.strftime("Le %m/%d/%Y")%></li>
+                              <li> <%=i.created_at.strftime("Le %d/%m/%Y")%></li>
                             </ul>
                         </div>
                       </article>
@@ -79,7 +79,7 @@
                                 <a href="<%=article_path(i)%>">
                                     <h3><%=i.title%></h3>
                                 </a>
-                                <p><%=i.created_at.strftime("Le %m/%d/%Y")%></p>
+                                <p><%=i.created_at.strftime("Le %d/%m/%Y")%></p>
                             </div>
                         </div>
                         <%end%>
@@ -100,7 +100,7 @@
                                   <a href="<%=article_path(i)%>">
                                       <h3><%=i.title%></h3>
                                   </a>
-                                  <p><%=i.created_at.strftime("Le %m/%d/%Y")%></p>
+                                  <p><%=i.created_at.strftime("Le %d/%m/%Y")%></p>
                               </div>
                           </div>
                           <%end%>
@@ -122,7 +122,7 @@
                                   <a href="<%=article_path(i)%>">
                                       <h3><%=i.title%></h3>
                                   </a>
-                                  <p><%=i.created_at.strftime("Le %m/%d/%Y")%></p>
+                                  <p><%=i.created_at.strftime("Le %d/%m/%Y")%></p>
                               </div>
                           </div>
                           <%end%>

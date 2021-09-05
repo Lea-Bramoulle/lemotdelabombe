@@ -120,7 +120,7 @@
                       <div class="short_details">
                           <div class="meta-top d-flex">
                               <a href="<%=categorie_path(i.categorie.id)%>"><%=i.categorie.categorie_name%></a>/
-                              <p><%=i.created_at.strftime("Le %m/%d/%Y")  %></p>
+                              <p><%=i.created_at.strftime("Le %d/%m/%Y")  %></p>
                           </div>
                           <a class="d-block" href="<%=article_path(i)%>">
                               <h4><%=i.title%></h4>
@@ -153,7 +153,7 @@
                               <h4><%=i.title%></h4>
                           </a>
                           <div class="meta-bottom d-flex">
-                              <p class="mr-4"><i class="ti-time"></i><%=i.created_at.strftime("Le %m/%d/%Y") %></p>
+                              <p class="mr-4"><i class="ti-time"></i><%=i.created_at.strftime("Le %d/%m/%Y") %></p>
                               <a ><i class="far fa-comment"></i> <%=i.comments.count%></a>
                               <a ><i class="far fa-heart"></i> <%=i.likes.count%></a>
                           </div>
