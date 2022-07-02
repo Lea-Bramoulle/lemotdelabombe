@@ -1,6 +1,6 @@
 class ArticleController < ApplicationController
 
-  before_action :is_admin?, only: :new  
+  # before_action :is_admin?, only: :new  
 
 
   def index
